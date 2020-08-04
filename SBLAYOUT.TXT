@@ -1,0 +1,185 @@
+002230 FD  SEL-SUPBEN-FILE                                                 CL*67
+002240     BLOCK CONTAINS 0                                                CL*67
+002250     RECORDING MODE IS F                                             CL*67
+002260     LABEL RECORDS ARE STANDARD.                                     CL*67
+002270 01  SUPBEN-REC.                                                     CL*67
+002280     05  SUPBEN-KEY.                                                 CL*67
+002290         10  SUPBEN-VALDATE              PIC X(10).                  CL*67
+002300         10  SUPBEN-COMMA-0              PIC X.                      CL*67
+002310         10  SUPBEN-COMPANY              PIC X(02).                  CL*67
+002320         10  SUPBEN-COMMA-1              PIC X.                      CL*67
+002330         10  SUPBEN-POLICY               PIC X(10).                  CL*67
+002340         10  SUPBEN-COMMA-2              PIC X.                      CL*67
+002350         10  SUPBEN-COV                  PIC X(02).                  CL*67
+002360         10  SUPBEN-COMMA-3              PIC X.                      CL*67
+002370         10  SUPBEN-TYPE                 PIC X(05).                  CL*67
+002380         10  SUPBEN-COMMA-4              PIC X.                      CL*67
+002390         10  SUPBEN-INHERENT             PIC X.                      CL*67
+002400         10  SUPBEN-COMMA-5              PIC X.                      CL*67
+002410     05  SUPBEN-MASTER-CODES.                                        CL*67
+002420*** ADB                                                              CL111
+002430         10  SUPBEN-MADBKEY              PIC X.
+002440         10  SUPBEN-COMMA-6              PIC X.                      CL112
+002450         10  SUPBEN-MADBANN              PIC  Z(9).99-.              CL213
+002460         10  SUPBEN-COMMA-7A             PIC X.                      CL153
+002470         10  SUPBEN-MADBANNZD            PIC  Z(9).99-.              CL153
+002480         10  SUPBEN-COMMA-7B             PIC X.                      CL153
+002490         10  SUPBEN-MADBVOL              PIC  Z(9).99-.              CL213
+002500         10  SUPBEN-COMMA-8              PIC X.                      CL112
+002510         10  SUPBEN-MADBCODE             PIC XX.
+002520         10  SUPBEN-COMMA-9              PIC X.                      CL112
+002530         10  SUPBEN-MADBRAT              PIC X.
+002540         10  SUPBEN-COMMA-10             PIC X.                      CL112
+002550         10  SUPBEN-MADB-ISSDATE         PIC  Z(8)-.                 CL211
+002560         10  SUPBEN-COMMA-11             PIC X.                      CL112
+002570         10  SUPBEN-MADB-COMMRATE        PIC  ZZ.9(5)-.              CL213
+002580         10  SUPBEN-COMMA-12             PIC X.                      CL112
+002590*** ADB2                                                             CL111
+002600         10  SUPBEN-MADB2                PIC X.                      CL111
+002610         10  SUPBEN-COMMA-13             PIC X.                      CL112
+002620         10  SUPBEN-MADBANN-2            PIC  Z(9).99-.              CL213
+002630         10  SUPBEN-COMMA-14A            PIC X.                      CL153
+002640         10  SUPBEN-MADBANNZD-2          PIC  Z(9).99-.              CL153
+002650         10  SUPBEN-COMMA-14B            PIC X.                      CL153
+002660         10  SUPBEN-MADBVOL-2            PIC  Z(9).99-.              CL213
+002670         10  SUPBEN-COMMA-15             PIC X.                      CL112
+002680         10  SUPBEN-MADBCODE-2           PIC XX.                     CL111
+002690         10  SUPBEN-COMMA-16             PIC X.                      CL112
+002700         10  SUPBEN-MADBRAT-2            PIC X.                      CL111
+002710         10  SUPBEN-COMMA-17             PIC X.                      CL112
+002720         10  SUPBEN-MADB-ISSDATE-2       PIC  Z(8)-.                 CL211
+002730         10  SUPBEN-COMMA-18             PIC X.                      CL112
+002740         10  SUPBEN-MADB-COMMRATE-2      PIC  ZZ.9(5)-.              CL213
+002750         10  SUPBEN-COMMA-19             PIC X.                      CL112
+002760                                                                     CL111
+002770*** PW                                                               CL111
+002780         10  SUPBEN-MPWKEY               PIC X.
+002790         10  SUPBEN-COMMA-20             PIC X.                      CL112
+002800         10  SUPBEN-MPWANN               PIC  Z(9).99-.              CL213
+002810         10  SUPBEN-COMMA-21A            PIC X.                      CL153
+002820         10  SUPBEN-MPWANNZD             PIC  Z(9).99-.              CL153
+002830         10  SUPBEN-COMMA-21B            PIC X.                      CL153
+002840         10  SUPBEN-MPWCODE              PIC XX.                     CL111
+002850         10  SUPBEN-COMMA-22             PIC X.                      CL112
+002860         10  SUPBEN-MPWRAT               PIC X.
+002870         10  SUPBEN-COMMA-23             PIC X.                      CL112
+002880         10  SUPBEN-MPW-ISSDATE          PIC  Z(8)-.                 CL211
+002890         10  SUPBEN-COMMA-24             PIC X.                      CL112
+002900         10  SUPBEN-MPW-COMMRATE         PIC  Z(2).9(5)-.            CL213
+002910         10  SUPBEN-COMMA-25             PIC X.                      CL112
+002920                                                                     CL111
+002930*** PW2                                                              CL131
+002940         10  SUPBEN-MPW2                 PIC X.                      CL111
+002950         10  SUPBEN-COMMA-26             PIC X.                      CL112
+002960         10  SUPBEN-MPWANN-2             PIC  Z(9).99-.              CL213
+002970         10  SUPBEN-COMMA-27A            PIC X.                      CL153
+002980         10  SUPBEN-MPWANNZD-2           PIC  Z(9).99-.              CL153
+002990         10  SUPBEN-COMMA-27B            PIC X.                      CL153
+003000         10  SUPBEN-MPWCODE-2            PIC XX.                     CL111
+003010         10  SUPBEN-COMMA-28             PIC X.                      CL112
+003020         10  SUPBEN-MPWRAT-2             PIC X.                      CL111
+003030         10  SUPBEN-COMMA-29             PIC X.                      CL112
+003040         10  SUPBEN-MPW-ISSDATE-2        PIC  Z(8)-.                 CL211
+003050         10  SUPBEN-COMMA-30             PIC X.                      CL112
+003060         10  SUPBEN-MPW-COMMRATE-2       PIC  Z(2).9(5)-.            CL213
+003070         10  SUPBEN-COMMA-31             PIC X.                      CL112
+003080*** PI                                                               CL111
+003090         10  SUPBEN-MPICOD               PIC XX.
+003100         10  SUPBEN-COMMA-32             PIC X.                      CL112
+003110         10  SUPBEN-MPIAGE               PIC  Z(3)-.                 CL211
+003120         10  SUPBEN-COMMA-33             PIC X.                      CL112
+003130         10  SUPBEN-MPIANN               PIC  Z(5).99-.              CL213
+003140         10  SUPBEN-COMMA-34A            PIC X.                      CL153
+003150         10  SUPBEN-MPIANNZD             PIC  Z(5).99-.              CL153
+003160         10  SUPBEN-COMMA-34B            PIC X.                      CL153
+003170         10  SUPBEN-MPISUBANN            PIC  Z(5).99-.              CL213
+003180         10  SUPBEN-COMMA-35A            PIC X.                      CL155
+003190         10  SUPBEN-MPISUBANNZD          PIC  Z(5).99-.              CL153
+003200         10  SUPBEN-COMMA-35B            PIC X.                      CL153
+003210         10  SUPBEN-MPIDBOANN            PIC  Z(5).99-.              CL213
+003220         10  SUPBEN-COMMA-36A            PIC X.                      CL156
+003230         10  SUPBEN-MPIDBOANNZD          PIC  Z(5).99-.              CL153
+003240         10  SUPBEN-COMMA-36B            PIC X.                      CL153
+003250*** AIO                                                              CL111
+003260         10  SUPBEN-MAIOCODE             PIC X.
+003270         10  SUPBEN-COMMA-37             PIC X.                      CL112
+003280         10  SUPBEN-MAIOAMT              PIC  Z(7)-.                 CL211
+003290         10  SUPBEN-COMMA-38             PIC X.                      CL112
+003300         10  SUPBEN-MAIOANN              PIC  ZZZ.99-.               CL213
+003310         10  SUPBEN-COMMA-39A            PIC X.                      CL153
+003320         10  SUPBEN-MAIOANNZD            PIC  ZZZ.99-.               CL153
+003330         10  SUPBEN-COMMA-39B            PIC X.                      CL153
+003340         10  SUPBEN-MAIO-CICODE          PIC X.                      CL111
+003350         10  SUPBEN-COMMA-40             PIC X.                      CL112
+003360         10  SUPBEN-MAIO-CICUR           PIC  Z(5).99-.              CL213
+003370         10  SUPBEN-COMMA-41             PIC X.                      CL112
+003380         10  SUPBEN-MAIO-CIPREV          PIC  Z(5).99-.              CL213
+003390         10  SUPBEN-COMMA-42             PIC X.                      CL112
+003400         10  SUPBEN-MAIO-CIDATE          PIC X(10).                  CL133
+003410         10  SUPBEN-COMMA-43             PIC X.                      CL112
+003420*** SL                                                               CL114
+003430         10  SUPBEN-MSLKEY               PIC X.                      CL114
+003440         10  SUPBEN-COMMA-44             PIC X.                      CL114
+003450         10  SUPBEN-MSLANN               PIC  Z(5).99-.              CL213
+003460         10  SUPBEN-COMMA-45A            PIC X.                      CL153
+003470         10  SUPBEN-MSLANNZD             PIC  Z(5).99-.              CL153
+003480         10  SUPBEN-COMMA-45B            PIC X.                      CL153
+003490         10  SUPBEN-MSLCODE              PIC XX.                     CL114
+003500         10  SUPBEN-COMMA-46             PIC X.                      CL114
+003510         10  SUPBEN-MSLRAT               PIC X.                      CL114
+003520         10  SUPBEN-COMMA-47             PIC X.                      CL114
+003530                                                                     CL111
+003540*** SL2                                                              CL172
+003550         10  SUPBEN-MSLKEY-2             PIC X.                      CL172
+003560         10  SUPBEN-COMMA-64             PIC X.                      CL173
+003570         10  SUPBEN-MSLANN-2             PIC  Z(5).99-.              CL172
+003580         10  SUPBEN-COMMA-65A            PIC X.                      CL173
+003590         10  SUPBEN-MSLANNZD-2           PIC  Z(5).99-.              CL172
+003600         10  SUPBEN-COMMA-65B            PIC X.                      CL173
+003610         10  SUPBEN-MSLCODE-2            PIC XX.                     CL172
+003620         10  SUPBEN-COMMA-66             PIC X.                      CL173
+003630         10  SUPBEN-MSLRAT-2             PIC X.                      CL172
+003640         10  SUPBEN-COMMA-67             PIC X.                      CL173
+003650                                                                     CL172
+003660     05  SUPBEN-MASTER-AMOUNTS.
+003670         10  SUPBEN-ANNPREM              PIC  Z(9).99-.              CL213
+003680         10  SUPBEN-COMMA-48A            PIC X.                      CL153
+003690         10  SUPBEN-ANNPREMZD            PIC  Z(9).99-.              CL153
+003700         10  SUPBEN-COMMA-48B            PIC X.                      CL153
+003710         10  SUPBEN-VOLUME               PIC  Z(9).99-.              CL213
+003720         10  SUPBEN-COMMA-49A            PIC X.                      CL185
+003730         10  SUPBEN-VOLUME-SBEN          PIC  Z(9).99-.              CL185
+003740         10  SUPBEN-COMMA-49B            PIC X.                      CL185
+003750         10  SUPBEN-UNITS                PIC  Z(6).9(5)-.            CL213
+003760         10  SUPBEN-COMMA-50A            PIC X.                      CL185
+003770         10  SUPBEN-UNITS-SBEN           PIC  Z(6).9(5)-.            CL*62
+003780         10  SUPBEN-COMMA-50B            PIC X.                      CL*62
+003790     05  SUPBEN-CREATED-VALUES.
+003800         10  SUPBEN-UNIT-FCTR            PIC Z(6).9(4).              CL213
+003810         10  SUPBEN-COMMA-51             PIC X.                      CL114
+003820         10  SUPBEN-CA-FCTR              PIC Z(6).9(4).              CL213
+003830         10  SUPBEN-COMMA-52             PIC X.                      CL114
+003840         10  SUPBEN-PW-FCTR              PIC Z(6).9(4).              CL213
+003850         10  SUPBEN-COMMA-53             PIC X.                      CL114
+003860     05  SUPBEN-INHERENT-FILE-VALUES.
+003870         10  SUPBEN-INHB-UNIT-BASE       PIC X(5).
+003880         10  SUPBEN-COMMA-54             PIC X.                      CL114
+003890         10  SUPBEN-INHB-UNIT-FACT       PIC  Z(7).999-.             CL213
+003900         10  SUPBEN-COMMA-55             PIC X.                      CL114
+003910         10  SUPBEN-INHB-UNIT-MAX        PIC  Z(5).9(5)-.            CL213
+003920         10  SUPBEN-COMMA-56             PIC X.                      CL114
+003930         10  SUPBEN-INHB-VOLUME-BASE     PIC X(5).
+003940         10  SUPBEN-COMMA-57             PIC X.                      CL114
+003950         10  SUPBEN-INHB-VOLUME-FACT     PIC  Z(7).999-.             CL213
+003960         10  SUPBEN-COMMA-58             PIC X.                      CL114
+003970         10  SUPBEN-INHB-VOLUME-MAX      PIC  Z(8).9(2)-.            CL213
+003980         10  SUPBEN-COMMA-59             PIC X.                      CL217
+003990         10  SUPBEN-STATUS               PIC X.                      CL217
+004000         10  SUPBEN-COMMA-60             PIC X.                      CL*29
+004010         10  SUPBEN-SPECOND              PIC XXXX.                   CL*29
+004020         10  SUPBEN-COMMA-61             PIC X.                      CL*29
+004030         10  SUPBEN-SEGIND               PIC X.                      CL*29
+004040         10  SUPBEN-COMMA-62             PIC X.                      CL*29
+004050         10  SUPBEN-ACTUARIAL-COMPANY    PIC XX.                     CL*32
+004060         10  SUPBEN-COMMA-63             PIC X.                      CL*32
+004070
