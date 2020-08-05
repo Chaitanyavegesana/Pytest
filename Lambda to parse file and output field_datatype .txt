@@ -1,0 +1,15 @@
+Requirment : 
+Part 1
+1) Write Lambda code in python 
+2) Lambda trigger can be dummy for now. We can execute Lambda manually 
+3) Input can be taken from Payload which will load input .TXT file from same folder where lambda loacated. 
+Or We can enhance it to S3 location later
+4) Pyhton code should parse the file and output filed name and Datatype in Camaseparated or datatype shown in DynamoDB table. 
+Part 2 
+Out put file should add record entery in the DynamoDB table. 
+
+
+Inludes : Any issue fixes to the code. 
+
+Total Cast for work : 40 $ 
+
