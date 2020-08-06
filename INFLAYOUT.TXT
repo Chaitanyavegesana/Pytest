@@ -1,0 +1,433 @@
+00001 ****************************************************************  07/30/20
+00002 **********   7-2-2019                                             INFINCLD
+00003 **********   JENNIFER'S COPY FOR THE DATA LAKE CHANGES.           L  LV054
+00004 **********                                                        INFINCLD
+00005 ****************************************************************  INFINCLD
+00006 *-*-*-*-*                                                         INFINCLD
+00007 *-*-*-*-* PANTEST.INCL(INFINCL)                                   INFINCLD
+00008 *-*-*-*-* AGLA METRICS FILE LAYOUT --- IN FORCE                   INFINCLD
+00009 *-*-*-*-* BEGIN : DECEMBER 22, 2003.                              INFINCLD
+00010 *-*-*-*-* END   : CURRENT                                         INFINCLD
+00011 *-*-*-*-* RECORD-LENGTH 800.                                      INFINCLD
+00012 *-*-*-*-*                                                         INFINCLD
+00013 *-*-*-*-* PRIOR TO JULY 25, 2002 --- USE INFINCLO                 INFINCLD
+00014 *-*-*-*-* PRIOR TO DEC  22, 2003 --- USE INF2003                  INFINCLD
+00015 *-*-*-*-*                                                         INFINCLD
+00016 *-*-*-*-* ** MODIFICATIONS **                                     INFINCLD
+00017 *-*-*-*-* INCREAED RECORD LAYOUT FROM 400 TO 450  --- BXM0785     INFINCLD
+00018 *-*-*-*-* INSERTED NEWLY ADDED LIEN FIELDS        --- SKU0785     INFINCLD
+00019 *-*-*-*-* MODIFIED FOR LARGE FIELD EXPANSION. R3 --- HCL  MOD05337INFINCLD
+00020 *-*-*-*-* ADDED WRITING AGENT FIELDS AND AGENT INFO - HCL MOD05338INFINCLD
+00021 *-*-*-*-* R4-INCREASED RECORD LAYOUT FROM 672 TO 705- HCL MOD05420INFINCLD
+00022 *-*-*-*-* ADDED 7 FIELDS RELATED TO DIVIDEND & COUPON-HCL MOD05420INFINCLD
+00023 ********* ADDED SUBSTANDARD FIELDS AND OTHER FIELDS RELATED TO    INFINCLD
+00024 ********* ESS EXTRACT CREATION - RECORD LENGTH NOW 800  LAS2663   INFINCLD
+00025  01  SEL-INFORCE-REC.                                             INFINCLD
+00026      05  SEL-POL-DATA.                                            INFINCLD
+00027          10  SEL-VALDATE          PIC 9(8).                       INFINCLD
+00028          10  SEL-CO               PIC XX.                         INFINCLD
+00029          10  SEL-POLNO            PIC X(10).                      INFINCLD
+00030          10  SEL-BILLFREQ         PIC X.                          INFINCLD
+00031          10  SEL-BILLMETHOD       PIC XX.                         INFINCLD
+00032          10  SEL-FREQ             PIC 99.                         INFINCLD
+00033          10  SEL-MODE             PIC XXX.                        INFINCLD
+00034          10  SEL-PRM-WAIVER       PIC X.                          INFINCLD
+00035          10  SEL-SOURCE           PIC XX.                         INFINCLD
+00036          10  SEL-SPECOND          PIC XXXX.                       INFINCLD
+00037          10  SEL-PDTO-DATE        PIC S9(7)   COMP-3.             INFINCLD
+00038          10  SEL-ISSDST           PIC XXXX.                       INFINCLD
+00039          10  SEL-DISTAGCY         PIC X(8).                       INFINCLD
+00040          10  FILLER REDEFINES SEL-DISTAGCY.                       INFINCLD
+00041              15  SEL-DIST.                                        INFINCLD
+00042                20  FILLER         PIC XX.                         INFINCLD
+00043                20  SEL-SVC-IND    PIC X.                          INFINCLD
+00044                20  FILLER         PIC X.                          INFINCLD
+00045              15  SEL-AGCY         PIC XXXX.                       INFINCLD
+00046 ************* START OF AGENT CODE MOD05338 ***************        INFINCLD
+00047 *        10  SEL-AGT-NUM          PIC X(6).                       INFINCLD
+00048          10  SEL-AGT-NUM          PIC X(10).                      INFINCLD
+00049 ************** END OF  AGENT CODE MOD05338 ***************        INFINCLD
+00050          10  SEL-STATE            PIC XX.                         INFINCLD
+00051          10  SEL-ZIP              PIC X(5).                       INFINCLD
+00052      05  SEL-CVG-DATA.                                            INFINCLD
+00053          10  SEL-RTBK             PIC XXX.                        INFINCLD
+00054          10  SEL-PLAN             PIC X(7).                       INFINCLD
+00055          10  SEL-RECTYPE          PIC X.                          INFINCLD
+00056          10  SEL-STATUS           PIC X.                          INFINCLD
+00057          10  SEL-SUBTYPE          PIC XX.                         INFINCLD
+00058          10  SEL-ISSDATE          PIC 9(8).                       INFINCLD
+00059          10  FILLER  REDEFINES SEL-ISSDATE.                       INFINCLD
+00060              15  SEL-ISSDATE-YR   PIC 9999.                       INFINCLD
+00061              15  SEL-ISSDATE-MO   PIC 99.                         INFINCLD
+00062              15  SEL-ISSDATE-DA   PIC 99.                         INFINCLD
+00063          10  SEL-ISSAGE           PIC 99.                         INFINCLD
+00064          10  SEL-VALPLAN          PIC X(5).                       INFINCLD
+00065          10  SEL-PRODUCT-CLASS    PIC X(7).                       INFINCLD
+00066          10  SEL-CVG              PIC X.                          INFINCLD
+00067          10  SEL-CLASS            PIC XX.                         INFINCLD
+00068          10  SEL-GENDER           PIC X.                          INFINCLD
+00069          10  SEL-NEW-LOB          PIC XX.                         INFINCLD
+00070          10  SEL-OLD-LOB          PIC XX.                         INFINCLD
+00071          10  SEL-SUBSTANDARD      PIC X.                          INFINCLD
+00072          10  SEL-SNG-PRM          PIC X.                          INFINCLD
+00073          10  SEL-COV-TYPE         PIC X.                          INFINCLD
+00074          10  SEL-NFOKEY           PIC XXX.                        INFINCLD
+00075          10  SEL-FORM-NO.                                         INFINCLD
+00076              15  FILLER           PIC X(6).                       INFINCLD
+00077              15  SEL-ISS-STATE    PIC XX.                         INFINCLD
+00078          10  SEL-ANN-TYPE         PIC X.                          INFINCLD
+00079          10  SEL-MEDSUPP-REINS    PIC X.                          INFINCLD
+00080      05  SEL-FLEX-DATA.                                           INFINCLD
+00081          10  SEL-FLEXTYPE         PIC X.                          INFINCLD
+00082          10  SEL-FLEX-SUSPENSE    PIC X.                          INFINCLD
+00083          10  SEL-FLEXSTATUS       PIC X.                          INFINCLD
+00084      05  SEL-REINSURANCE-DATA.                                    INFINCLD
+00085          10  SEL-REINS-CO         PIC XX.                         INFINCLD
+00086          10  SEL-REINS-KIND       PIC XX.                         INFINCLD
+00087          10  SEL-REINS-CODE       PIC X.                          INFINCLD
+00088          10  SEL-REINS-CEDED      PIC S9(7)V99   COMP-3.          INFINCLD
+00089      05  SEL-VALUES.                                              INFINCLD
+00090          10  SEL-POL-CNT          PIC 9.                          INFINCLD
+00091          10  SEL-RDR-CNT          PIC 9.                          INFINCLD
+00092 **************** START AGNIS EXPANSION MOD05337 ***************** INFINCLD
+00093 *        10  SEL-UNITS            PIC S9999V9(5) COMP-3.          INFINCLD
+00094          10  SEL-AGNIS-UNITS      PIC S9(6)V9(5) COMP-3.             CL*28
+00095 *        10  SEL-UNITS            PIC S9999V9(5) COMP-3.             CL*28
+00096          10  SEL-UNITS            PIC S9(6)V9(5) COMP-3.             CL*28
+00097          10  SEL-CURRUNITVAL      PIC S9(5)V99   COMP-3.          INFINCLD
+00098 *        10  SEL-VOLUME           PIC S9(7)V99   COMP-3.          INFINCLD
+00099          10  SEL-AGNIS-VOLUME     PIC S9(9)V99   COMP-3.             CL*28
+00100 *        10  SEL-VOLUME           PIC S9(7)V99   COMP-3.             CL*28
+00101          10  SEL-VOLUME           PIC S9(9)V99   COMP-3.             CL*28
+00102 *        10  SEL-MAP              PIC S9(7)V99   COMP-3.          INFINCLD
+00103          10  SEL-MAP              PIC S9(9)V99   COMP-3.          INFINCLD
+00104 *        10  SEL-ANNPREM          PIC S9(6)V99   COMP-3.          INFINCLD
+00105          10  SEL-ANNPREM          PIC S9(9)V99   COMP-3.          INFINCLD
+00106 *        10  SEL-MODPREM          PIC S9(6)V99   COMP-3.          INFINCLD
+00107          10  SEL-MODPREM          PIC S9(9)V99   COMP-3.          INFINCLD
+00108 *        10  SEL-TOTANN           PIC S9(6)V99   COMP-3.          INFINCLD
+00109          10  SEL-TOTANN           PIC S9(9)V99   COMP-3.          INFINCLD
+00110 *        10  SEL-ANNUAL-PRM       PIC S9(7)V99   COMP-3.          INFINCLD
+00111          10  SEL-ANNUAL-PRM       PIC S9(9)V99   COMP-3.          INFINCLD
+00112 *        10  SEL-ANNUALIZED-PRM   PIC S9(7)V99   COMP-3.          INFINCLD
+00113          10  SEL-ANNUALIZED-PRM   PIC S9(9)V99   COMP-3.          INFINCLD
+00114 ********************* END MOD05337  ***************************   INFINCLD
+00115      05  SEL-ADDTL-FIELDS.                                        INFINCLD
+00116          10  SEL-SUBLOB           PIC X(7).                       INFINCLD
+00117          10  SEL-RISK             PIC XX.                         INFINCLD
+00118 **************** START AGNIS EXPANSION MOD05337 ***************** INFINCLD
+00119 *        10  SEL-FUND-VALUE       PIC S9(7)V99    COMP-3.         INFINCLD
+00120          10  SEL-FUND-VALUE       PIC S9(9)V99    COMP-3.         INFINCLD
+00121 ********************* END MOD05337  ***************************   INFINCLD
+00122          10  SEL-BASE-RTBK        PIC XXX.                        INFINCLD
+00123          10  SEL-BASE-PLAN        PIC X(7).                       INFINCLD
+00124          10  SEL-BASE-VALPLAN     PIC X(5).                       INFINCLD
+00125          10  SEL-BILLCONTROL.                                     INFINCLD
+00126              15  SEL-GROUP-NO     PIC X(7).                       INFINCLD
+00127              15  SEL-SSN          PIC X(9).                       INFINCLD
+00128          10  SEL-AGCY-TYPE       PIC X(4).                        INFINCLD
+00129          10  SEL-MOLDPLAN         PIC X(5).                       INFINCLD
+00130 ***      10  SEL-PW-IND           PIC X.                             CL*23
+00131 **************** START AGNIS EXPANSION MOD05337 ***************** INFINCLD
+00132 *        10  SEL-PW-ANN-PREM      PIC S9(7)V99   COMP-3.          INFINCLD
+00133 ***      10  SEL-PW-ANN-PREM      PIC S9(9)V99   COMP-3.             CL*23
+00134 ***      10  SEL-ADB-IND          PIC X.                             CL*23
+00135 *        10  SEL-ADB-ANN-PREM     PIC S9(7)V99   COMP-3.          INFINCLD
+00136 ***      10  SEL-ADB-ANN-PREM     PIC S9(9)V99   COMP-3.             CL*23
+00137 ********************* END MOD05337  ***************************   INFINCLD
+00138 *        10  SEL-FUND-NUMBER      PIC 999.                           CL*38
+00139 *        10  SEL-FUND-TYPE        PIC X.                             CL*38
+00140          10  SEL-ISSUE-SOURCE     PIC XX.                            CL*38
+00141          10  SEL-CVG-UNITS        PIC S9(6)V9(5).                    CL*39
+00142 ***      10  SEL-CVG-ADB-FACE-UNITS.                                 CL*23
+00143 ***          15  SEL-ADB-UNITS    PIC S9(6)V9(5).                    CL*23
+00144 ***      10  SEL-CVG-PW-FACE-BAND-UNITS.                             CL*23
+00145 ***          15  SEL-PW-UNITS     PIC S9(6)V9(5).                    CL*23
+00146          10  SEL-TRML-IND         PIC X.                          INFINCLD
+00147          10  SEL-CHRNC-IND        PIC X.                          INFINCLD
+00148          10  SEL-CRIT-IND         PIC X.                          INFINCLD
+00149          10  SEL-LAST-PP-BILLMETH PIC XX.                         INFINCLD
+00150          10  SEL-LAST-PPMODE      PIC XXX.                        INFINCLD
+00151          10  SEL-ACF-CCODE        PIC XX.                         INFINCLD
+00152 *        10  SEL-ISSUE-SUBSOURCE  PIC XX.                            CL*38
+00153          10  SEL-MKT-PROD-NAME    PIC X(30).                      INFINCLD
+00154          10  SEL-REGION-ABBR      PIC XX.                         INFINCLD
+00155          10  SEL-MPRIMED          PIC X.                          INFINCLD
+00156          10  SEL-MSECMED          PIC X.                          INFINCLD
+00157          10  SEL-DEF-PREM-IND     PIC X.                          INFINCLD
+00158          10  SEL-TOT-DEF-PREM     PIC S9(9)V99   COMP-3.          INFINCLD
+00159          10  SEL-DEF-PREM-MTH-CNT PIC S9(2)      COMP-3.          INFINCLD
+00160          10  SEL-DEF-LAST-PAY-DTE PIC S9(8)      COMP-3.          INFINCLD
+00161          10  SEL-DM-ID            PIC X(07).                      INFINCLD
+00162          10  SEL-SEGMENT-IND      PIC X.                          INFINCLD
+00163          10  SEL-DURATION         PIC 999.                        INFINCLD
+00164          10  SEL-NO-CNT           PIC 9.                          INFINCLD
+00165          10  SEL-FRACRULE         PIC XX.                         INFINCLD
+00166          10  SEL-BASE-MKT-PROD-NAME  PIC X(30).                   INFINCLD
+00167          10  SEL-BASE-LOB         PIC X(2).                       INFINCLD
+00168          10  SEL-PAR-CODE         PIC X.                          INFINCLD
+00169          10  SEL-MDIV             PIC XX.                         INFINCLD
+00170          10  SEL-TRUE-UP          PIC S9(7)   COMP-3.             INFINCLD
+00171          10  SEL-IND-DTH-BEN      PIC S9(7)   COMP-3.             INFINCLD
+00172      05  SEL-AGENT-A-INFO.                                        INFINCLD
+00173          10  SEL-MNAGENTA            PIC X(6).                    INFINCLD
+00174          10  SEL-MNVOLA              PIC S9V99 COMP-3.            INFINCLD
+00175          10  SEL-MCONCODEA           PIC X.                       INFINCLD
+00176      05  SEL-AGENT-B-INFO.                                        INFINCLD
+00177          10  SEL-MNAGENTB            PIC X(6).                    INFINCLD
+00178          10  SEL-MNVOLB              PIC S9V99 COMP-3.            INFINCLD
+00179          10  SEL-MCONCODEB           PIC X.                       INFINCLD
+00180 ************* START OF AGENT CODE MOD05338 ***************        INFINCLD
+00181      05  SEL-AGENT-C-INFO.                                        INFINCLD
+00182          10  SEL-MNAGENTC            PIC X(6).                    INFINCLD
+00183          10  SEL-MNVOLC              PIC S9V99 COMP-3.            INFINCLD
+00184          10  SEL-MCONCODEC           PIC X.                       INFINCLD
+00185      05  SEL-AGENT-B-INFO.                                        INFINCLD
+00186          10  SEL-MNAGENTD            PIC X(6).                    INFINCLD
+00187          10  SEL-MNVOLD              PIC S9V99 COMP-3.            INFINCLD
+00188          10  SEL-MCONCODED           PIC X.                       INFINCLD
+00189 ************** END OF  AGENT CODE MOD05338 ***************        INFINCLD
+00190      05  SEL-LIEN-INFO.                                           INFINCLD
+00191 *********************** AGNIS EXPANSION MOD05301 STARTS ********* INFINCLD
+00192          10  SEL-LIEN-AMOUNT      PIC S9(7)V99 COMP-3.            INFINCLD
+00193          10  SEL-LIEN-RATE        PIC S9(2)V9(5) COMP-3.          INFINCLD
+00194          10  SEL-LIEN-INT-AMT     PIC S9(5)V99 COMP-3.            INFINCLD
+00195          10  SEL-LIEN-DEF-PREM    PIC S9(9)V99 COMP-3.            INFINCLD
+00196 *************** START OF AGNIS EXPANSION MOD05337 ****************INFINCLD
+00197 *    05  SEL-FILLER               PIC X(08).                      INFINCLD
+00198 ********************* END MOD05337  ***************************   INFINCLD
+00199 *    05  SEL-FILLER               PIC X(27).                      INFINCLD
+00200 *    05  SEL-FILLER               PIC X(45).                      INFINCLD
+00201 *********************** AGNIS EXPANSION MOD05301 ENDS *********** INFINCLD
+00202 ************* START OF AGENT CODE MOD05338 ***************        INFINCLD
+00203      05  SEL-AGENT-POL-CVR-NUM              PIC X(2).             INFINCLD
+00204      05  SEL-AGL-AGENT-COV-LEVELS   OCCURS 10 TIMES.              INFINCLD
+00205             10 SEL-AGENT-NUMBER              PIC X(10).           INFINCLD
+00206             10 SEL-COMMISSION-SPLIT          PIC S9(3)V99 COMP-3. INFINCLD
+00207             10 SEL-PRODUCTION-SPLIT          PIC S9(3)V99 COMP-3. INFINCLD
+00208 ************* MOD05420 - START ***********************************INFINCLD
+00209      05   SEL-DIV-COUP-AMT.                                       INFINCLD
+00210            10  SEL-DIV-ACCUM-TOT-AMT        PIC S9(9)V9(2) COMP-3.INFINCLD
+00211            10  SEL-DIV-ACCUM-ACCRINT-TOT-AMT PIC S9(7)V99 COMP-3. INFINCLD
+00212            10  SEL-DIV-ACCR-INT-RT          PIC S9(1)V9(3) COMP-3.INFINCLD
+00213            10  SEL-COUP-ACCUM-TOT-AMT       PIC S9(9)V99 COMP-3.  INFINCLD
+00214            10  SEL-COUP-ACCUM-ACCRINT-TOTAMT                      INFINCLD
+00215                                             PIC S9(7)V9(2) COMP-3.INFINCLD
+00216            10  SEL-COUP-ACCR-INT-RT         PIC S9(1)V9(3) COMP-3.INFINCLD
+00217            10  SEL-DIV-DUE-UNPAID-TOT-AMT   PIC S9(7)V9(2) COMP-3.INFINCLD
+00218      05  SEL-FLEX-INTRATE6                  PIC S9(2)V999 COMP-3. INFINCLD
+00219      05  SEL-FLEX-INTRATE7                  PIC S9(2)V999 COMP-3. INFINCLD
+00220      05  SEL-FLEX-INTRATE8                  PIC S9(2)V999 COMP-3. INFINCLD
+00221      05  SEL-FLEX-TOT                       PIC S9(9)V99 COMP-3.  INFINCLD
+00222      05  SEL-FLEX-AMT10                     PIC S9(9)V99 COMP-3.  INFINCLD
+00223 ************* MOD05420 - END *************************************INFINCLD
+00224      05  SEL-LOAN-AMOUNT                    PIC S9(9)V99 COMP-3.  INFINCLD
+00225      05  SEL-LOAN-INTEREST-RATE             PIC SV9(5) COMP-3.    INFINCLD
+00226 *    05  FILLER                              PIC X(35).           INFINCLD
+00227 *    05  FILLER                              PIC X(14).           INFINCLD
+00228 *    05  FILLER                              PIC X(5).            INFINCLD
+00229 ************** END OF  AGENT CODE MOD05338 ***************        INFINCLD
+00230      05  SEL-LIVES                           PIC X.               INFINCLD
+00231      05  SEL-MORT                            PIC XX.              INFINCLD
+00232      05  SEL-DISTRIBUTION                    PIC X(4).            INFINCLD
+00233      05  SEL-AGENCY-CODE-AGL                 PIC X(5).            INFINCLD
+00234      05  SEL-PENSION                         PIC X.               INFINCLD
+00235      05  SEL-TBLNO                           PIC XXX.             INFINCLD
+00236      05  SEL-TBLOFF                          PIC S99 COMP-3.      INFINCLD
+00237      05  SEL-TBLANN                          PIC S9(7)V99 COMP-3. INFINCLD
+00238      05  SEL-FLATA                           PIC XX.              INFINCLD
+00239      05  SEL-FLATOFFA                        PIC S99 COMP-3.      INFINCLD
+00240      05  SEL-FLATANNA                        PIC S9(7)V99 COMP-3. INFINCLD
+00241      05  SEL-FLATB                           PIC XX.              INFINCLD
+00242      05  SEL-FLATOFFB                        PIC S99 COMP-3.      INFINCLD
+00243      05  SEL-FLATANNB                        PIC S9(7)V99 COMP-3. INFINCLD
+00244      05  SEL-FLATC                           PIC XX.              INFINCLD
+00245      05  SEL-FLATOFFC                        PIC S99 COMP-3.      INFINCLD
+00246      05  SEL-FLATANNC                        PIC S9(7)V99 COMP-3. INFINCLD
+00247      05  SEL-FLATD                           PIC XX.              INFINCLD
+00248      05  SEL-FLATOFFD                        PIC S99 COMP-3.      INFINCLD
+00249      05  SEL-FLATANND                        PIC S9(7)V99 COMP-3. INFINCLD
+00250      05  SEL-INSLIN                          PIC X.               INFINCLD
+00251      05  SEL-MDIVOPT                         PIC X.               INFINCLD
+00252      05  SEL-SIR-NAR                       PIC S9(11)V99  COMP-3. INFINCLD
+00253      05  SEL-SIR-DUR                         PIC XXX.             INFINCLD
+00254 ******************************************************************   CL*18
+00255 ***  NEW FIELDS ADDED FOR AGNIS EXTRACT GOING TO AWS *************   CL*18
+00256 ******************************************************************   CL*18
+00257 *** FROM THE RECORD-CONTROL SECTION ******************************   CL*18
+00258      05  SEL-MTYPE                          PIC X.                   CL*18
+00259      05  SEL-MRESORS                        PIC X.                   CL*18
+00260      05  SEL-MTRANSFER-FROM.                                         CL*18
+00261          10  SEL-MTRANSST-DIST              PIC XXXX.                CL*18
+00262          10  SEL-MTRANSDEBIT                PIC XXXX.                CL*18
+00263      05  SEL-MPRIDOB                        PIC S9(7) COMP-3.        CL*18
+00264      05  SEL-MSECDOB                        PIC S9(7) COMP-3.        CL*18
+00265      05  SEL-MINSURED-SSN                   PIC X(9).                CL*18
+00266      05  SEL-MSPOUSE-SSN                    PIC X(9).                CL*18
+00267      05  SEL-MCO-OWNER-SSN                  PIC X(9).                CL*18
+00268      05  SEL-MSTATUTORY-COMPANY             PIC XX.                  CL*18
+00269      05  SEL-MORIGINAL-COMPANY              PIC XXX.                 CL*51
+00270      05  SEL-MSERV-AGENT-AGL                PIC X(10).               CL*18
+00271      05  SEL-MGROUP-POLICY-NUMBER           PIC X(15).               CL*18
+00272      05  SEL-MORIGINAL-POLICY-NUMBER        PIC X(10).               CL*18
+00273 *** FROM THE COVERAGE TRAILERS  **********************************   CL*18
+00274      05  SEL-MSECVALYR                      PIC S99 COMP-3.          CL*18
+00275      05  SEL-MUNITBEN                       PIC XXX.                 CL*18
+00276      05  SEL-MLASTREGDAT                    PIC S9(7)     COMP-3.    CL*18
+00277      05  SEL-MPLANNAME                      PIC X(10).               CL*18
+00278      05  SEL-MPLANSMOKER                    PIC X.                   CL*18
+00279      05  SEL-MPLANPXBAND                    PIC X.                   CL*18
+00280      05  SEL-MVALAGE                        PIC XX.                  CL*18
+00281      05  SEL-MFULLBEN                       PIC X.                   CL*18
+00282      05  SEL-MINTRATE                       PIC XX.                  CL*18
+00283      05  SEL-MVALBAS                        PIC X.                   CL*18
+00284      05  SEL-MNOPREM                        PIC S999 COMP-3.         CL*18
+00285      05  SEL-MCOVYRS                        PIC S999 COMP-3.         CL*18
+00286      05  SEL-MINTYRS                        PIC S999 COMP-3.         CL*18
+00287      05  SEL-MLIFESTYLE-MINPREM             PIC S9(7)V99  COMP-3.    CL*18
+00288      05  SEL-MCVCODE                        PIC X.                   CL*18
+00289      05  SEL-MEIRPUCODE                     PIC X.                   CL*18
+00290      05  SEL-MJOINT                         PIC X.                   CL*18
+00291 ***  05  SEL-MADB2                          PIC X.                   CL*23
+00292 ***  05  SEL-MPW2                           PIC X.                   CL*23
+00293 ***  05  SEL-MSLKEY                         PIC X.                   CL*23
+00294      05  SEL-MORIG-PLAN-CODE                PIC X(10).               CL*18
+00295 ***  05  SEL-MADBVOL                        PIC S9(9)    COMP-3.     CL*23
+00296 ***  05  SEL-MADBCODE                       PIC X.                   CL*23
+00297 ***  05  SEL-MADBRAT                        PIC X.                   CL*23
+00298 ***  05  SEL-MPWCODE                        PIC XX.                  CL*23
+00299 ***  05  SEL-MPWRAT                         PIC X.                   CL*23
+00300      05  SEL-MCV-1                          PIC S9(5)V99  COMP-3.    CL*18
+00301      05  SEL-MCV-2                          PIC S9(5)V99  COMP-3.    CL*18
+00302      05  SEL-MCV-3                          PIC S9(5)V99  COMP-3.    CL*18
+00303      05  SEL-MCV-4                          PIC S9(5)V99  COMP-3.    CL*18
+00304      05  SEL-MLIFESTYLE-BANK-ACC            PIC S9(9)V99  COMP-3.    CL*18
+00305      05  SEL-MNFEXPIRY                      PIC S9(7)     COMP-3.    CL*29
+00306      05  SEL-MNFENDOW                       PIC S9(5)V99 COMP-3.     CL*18
+00307      05  SEL-MJOINT-AGE1                    PIC S999  COMP-3.        CL*18
+00308      05  SEL-MJOINT-SEX1                    PIC X.                   CL*18
+00309      05  SEL-MJOINT-STAT1                   PIC X.                   CL*18
+00310      05  SEL-MJOINT-AGE2                    PIC S999  COMP-3.        CL*18
+00311      05  SEL-MJOINT-SEX2                    PIC X.                   CL*18
+00312      05  SEL-MJOINT-STAT2                   PIC X.                   CL*18
+00313 ***  05  SEL-MADBVOL-2                      PIC S9(9)V99 COMP-3.     CL*23
+00314 ***  05  SEL-MADBCODE-2                     PIC XX.                  CL*23
+00315 ***  05  SEL-MADBRAT-2                      PIC X.                   CL*23
+00316 ***  05  SEL-MPWANN-2                       PIC S9(9)V99 COMP-3.     CL*23
+00317 ***  05  SEL-MPWCODE-2                      PIC XX.                  CL*23
+00318 ***  05  SEL-MSLCODE                        PIC XX.                  CL*23
+00319 ***  05  SEL-MSLRAT                         PIC X.                   CL*23
+00320 *** FROM THE SUBSTANDARD TRAILERS ********************************   CL*18
+00321      05  SEL-MRATEREASON                    PIC XX.                  CL*18
+00322      05  SEL-MFLATREASONA                   PIC XX.                  CL*18
+00323      05  SEL-MFLATREASONB                   PIC XX.                  CL*18
+00324      05  SEL-MFLATREASONC                   PIC XX.                  CL*18
+00325      05  SEL-MFLATREASOND                   PIC XX.                  CL*18
+00326 *** FROM THE GUIDELINE PREMIUM TRAILER ***************************   CL*18
+00327      05  SEL-MGSP                           PIC S9(9)V99  COMP-3.    CL*18
+00328      05  SEL-MGLP                           PIC S9(9)V99  COMP-3.    CL*18
+00329 *** FROM THE PREMIUM TRAILER *************************************   CL*18
+00330      05  SEL-MANNMOD                        PIC S9(9)V99  COMP-3.    CL*18
+00331      05  SEL-MSAMOD                         PIC S9(9)V99  COMP-3.    CL*18
+00332      05  SEL-MQMOD                          PIC S9(9)V99  COMP-3.    CL*18
+00333      05  SEL-MMOMOD                         PIC S9(9)V99  COMP-3.    CL*18
+00334      05  SEL-MLIST-SMC-MODE-PREM            PIC S9(9)V99  COMP-3.    CL*18
+00335      05  SEL-MSPECMOD                       PIC S9(9)V99  COMP-3.    CL*18
+00336      05  SEL-MEMPBEN                        PIC S9(9)V99  COMP-3.    CL*18
+00337      05  SEL-MLASTPREMTRAN                  PIC S9(9)     COMP-3.    CL*18
+00338 *** FROM THE DIVIDEND TRAILER ************************************   CL*18
+00339      05  SEL-MEXDIVD                        PIC S9(7)V99 COMP-3.     CL*18
+00340      05  SEL-MDIVINT                        PIC S9(7)V99  COMP-3.    CL*18
+00341      05  SEL-MTOTAMT                        PIC S9(9)V99 COMP-3.     CL*18
+00342      05  SEL-MSECOPT                        PIC X.                   CL*18
+00343      05  SEL-MTOTPUA                        PIC S9(7) COMP-3.        CL*18
+00344      05  SEL-MPUAVAL-A                      PIC S9(5)V99 COMP-3.     CL*18
+00345      05  SEL-MPUAVAL-B                      PIC S9(5)V99 COMP-3.     CL*18
+00346      05  SEL-MPUAVAL-C                      PIC S9(5)V99 COMP-3.     CL*18
+00347      05  SEL-MPUAVAL-D                      PIC S9(5)V99 COMP-3.     CL*18
+00348      05  SEL-MCOUP-ONDEP                    PIC S9(9)V99 COMP-3.     CL*18
+00349 *** FROM THE RETURN OF PREMIUM TRAILER ***************************   CL*18
+00350      05  SEL-MROP-PRIMARY-PREM-PD           PIC S9(9)V99  COMP-3.    CL*18
+00351 *** FROM THE ADDITIONAL INSURANCE TRAILER ************************   CL*19
+00352      05  SEL-MAIOCODE                       PIC X.                   CL*21
+00353      05  SEL-MAIOAMT                        PIC S9(7)  COMP-3.       CL*20
+00354      05  SEL-MAIOANN                        PIC S999V99 COMP-3.      CL*22
+00355 *** FROM THE PURCHASER  INSURANCE TRAILER ************************   CL*19
+00356      05  SEL-MPICOD                         PIC XX.                  CL*20
+00357      05  SEL-MPIAGE                         PIC S9(3)  COMP-3.       CL*20
+00358      05  SEL-MPIANN                         PIC S9(5)V99 COMP-3.     CL*18
+00359      05  SEL-MPIDBOANN                      PIC S9(5)V99 COMP-3.     CL*20
+00360 *** FROM THE INSUREDS NAME TRAILER  ******************************   CL*18
+00361      05  SEL-MINSNAME                       PIC X(35).               CL*18
+00362 *** FROM THE HEALTH TRAILER  *************************************   CL*18
+00363      05  SEL-MACCDAYS                       PIC S999 COMP-3.         CL*18
+00364      05  SEL-MSICKDAYS                      PIC S999 COMP-3.         CL*18
+00365      05  SEL-MPIA-CODE                      PIC X.                   CL*18
+00366 *** FROM THE FLEX ANNUITY TRAILER ********************************   CL*19
+00367      05  SEL-MTERMVAL-BEGIN                 PIC S9(9)V99 COMP-3.     CL*19
+00368      05  SEL-MTERMVAL-END                   PIC S9(9)V99 COMP-3.     CL*19
+00369      05  SEL-MWD-AMT                        PIC S9(9)V99 COMP-3.     CL*18
+00370      05  SEL-MEXTINT-DATE                   PIC S9(7)    COMP-3.     CL*18
+00371      05  SEL-MEXTINT-AMT                    PIC S9(7)V99 COMP-3.     CL*18
+00372      05  SEL-MADMIN-CHARGE                  PIC S9V99  COMP-3.       CL*18
+00373      05  SEL-MFLEX-INT                      PIC SV9(5)   COMP-3.     CL*18
+00374 *** FROM THE LAPSE TRAILER ***************************************   CL*18
+00375      05  SEL-MFINSTDIST                     PIC XXXX.                CL*18
+00376 *** FROM THE MULTIPLE ROLE TRAILER *******************************   CL*18
+00377      05  SEL-MMULTI-ROLE-SSN OCCURS 15 TIMES PIC X(9).               CL*18
+00378 *** CALCULATED CASH VALUE FIELDS *********************************   CL*24
+00379      05  SEL-CASH-VALUE-CURR-MO        PIC S9(9)V99 COMP-3.          CL*24
+00380      05  SEL-CASH-VALUE-WITH-UEP       PIC S9(9)V99 COMP-3.          CL*52
+00381 *** CALCULATED CASH VALUE FIELDS *********************************   CL*25
+00382      05  SEL-GPR-PERCENTAGE            PIC 9V999.                    CL*25
+00383 *** "CREATOR" FILE FIELDS ****************************************   CL*26
+00384      05  SEL-SUBCOV                    PIC X.                        CL*27
+00385      05  SEL-CREATOR-X-FIELD           PIC X.                        CL*27
+00386 *** ADDITIONAL FIELDS REQUESTED **********************************   CL*30
+00387      05  SEL-ACTUARIAL-COMPANY-CODE    PIC XX.                       CL*30
+00388      05  SEL-BASE-RIDER-INDICATOR      PIC X.                        CL*30
+00389      05  SEL-BILLMODE                  PIC XXX.                      CL*30
+00390      05  SEL-DIS-AGE                   PIC 99.                       CL*30
+00391      05  SEL-DIS-YEARS                 PIC 99.                       CL*30
+00392      05  SEL-ENDOWMENT-IND             PIC X.                        CL*30
+00393      05  SEL-LIT-IND                   PIC X.                        CL*30
+00394      05  SEL-LIT-CODE                  PIC XX.                       CL*30
+00395      05  SEL-LIT-FACE-AMT              PIC S9(9).                    CL*30
+00396      05  SEL-MATURITY-DATE             PIC S9(8).                    CL*43
+00397      05  SEL-MATURITY-DATE-REDEF REDEFINES SEL-MATURITY-DATE.        CL*43
+00398          10  SEL-MATURITY-DATE-CC          PIC S9(2).                CL*42
+00399          10  SEL-MATURITY-DATE-YYMMDD      PIC  9(6).                CL*42
+00400      05  SEL-MATURITY-IND              PIC X.                        CL*30
+00401      05  SEL-PREV-PREM-METHOD          PIC XX.                       CL*30
+00402      05  SEL-PREV-PREM-MODE            PIC XXX.                      CL*30
+00403      05  SEL-REMDIV                    PIC S99999V99.                CL*30
+00404      05  SEL-REPLACED-COMPANY          PIC XX.                       CL*30
+00405      05  SEL-REPLACED-POLICY-NUMBER    PIC X(10).                    CL*30
+00406      05  SEL-RESIDENT-STREET-ADDRESS1  PIC X(35).                    CL*44
+00407      05  SEL-RESIDENT-STREET-ADDRESS2  PIC X(35).                    CL*44
+00408      05  SEL-RESIDENT-CITY             PIC X(27).                    CL*44
+00409      05  SEL-SUBSTD-MULT               PIC XXX.                      CL*30
+00410      05  SEL-SUBSTD-IND                PIC X.                        CL*32
+00411      05  SEL-SYSTEM-CODE               PIC XXX.                      CL*30
+00412      05  SEL-COVERAGE-AGE-YEAR-IND     PIC X.                        CL*30
+00413      05  SEL-COVERAGE-AGE              PIC XXX.                      CL*30
+00414      05  SEL-COVERAGE-YEARS            PIC XXX.                      CL*30
+00415      05  SEL-PREMIUM-AGE-YEAR-IND      PIC X.                        CL*30
+00416      05  SEL-PREMIUM-AGE               PIC XXX.                      CL*30
+00417      05  SEL-PREMIUM-YEARS             PIC XXX.                      CL*30
+00418      05  SEL-ANNUITY-PHASE             PIC X.                        CL*34
+00419      05  SEL-ACCUM-PREMS-PD-FROM-ISS   PIC S9(9)V99.                 CL*37
+00420      05  SEL-CVAT-OR-GUIDELINE-IND     PIC X.                        CL*34
+00421      05  SEL-MPREM-DEFERRAL-AMT        PIC S9(7)V99.                 CL*34
+00422      05  SEL-MPREM-DEFERRAL-DT         PIC S9(6).                    CL*35
+00423      05  SEL-MPREM-DEFERRAL-CNT        PIC X.                        CL*35
+00424      05  SEL-MLIFESTYLE-NETDEP         PIC S9(9)V99.                 CL*36
+00425      05  SEL-ANNUALIZED-PLUS-SUB       PIC S9(9)V99   COMP-3.        CL*47
+00426      05  SEL-MIDENT                    PIC X(9).                     CL*45
+00427      05  SEL-ANNUALIZED-PLUS-SUB-SBEN  PIC S9(9)V99   COMP-3.        CL*47
+00428      05  SEL-CASH-VALUE-UEP            PIC S9(9)V99 COMP-3.          CL*48
+00429      05  SEL-VOLUME-AXIS               PIC S9(9)V99 COMP-3.          CL*53
+00430      05  SEL-TERM-POL-CNT              PIC 9.                        CL*54
+00431      05  SEL-TERM-RDR-CNT              PIC 9.                        CL*54
+00432      05  SEL-TERM-NO-CNT               PIC 9.                        CL*54
+00433                                                                      CL*30
