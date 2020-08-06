@@ -2,7 +2,7 @@
 #for x in f:
  # print(x)
 import re
-filename = "SBLAYOUT.txt"
+filename = "SBLAYOUT.TXT"
 outputstring =''
 
 

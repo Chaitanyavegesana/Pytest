@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  datatypeparser:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Description: ''
+      Handler: datatype_parser.lambda_handler
+      MemorySize: 128
+      Role: 'arn:aws:iam::155227993165:role/AD_DEV_life_it_ec2'
+      Runtime: python3.7
+      Timeout: 3
+      Environment:
+        Variables:
+          region: 'us-east-1'
+          env: 'DEV'
+          ddb_srcmaster: 'DEV-life_it-sourcemasterlist'
+          ddb_temptable: 'DEV-life_it-TempTable'
+          logging_level: 'DEBUG'
