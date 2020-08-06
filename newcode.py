@@ -2,11 +2,7 @@
 #for x in f:
  # print(x)
 import re
-<<<<<<< HEAD
 filename = "SBLAYOUT.TXT"
-=======
-filename = "inflaout.txt"
->>>>>>> f834ec1122696845d9546db7e4131620d510c189
 outputstring =''
 
 

@@ -19,8 +19,8 @@ def DataType(clause):
 	if 'X' in clause:
 		if 'XX' in clause or '(' in clause :
 			return 'String'
-		return 'Integer'
-	elif 'Z' in clause:
+		return 'Integer' 
+	elif 'Z' in clause or 'S' in clause :
 		return 'decimal'
 
 def parser_handler(filename):
